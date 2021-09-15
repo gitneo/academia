@@ -11,6 +11,9 @@ import { TemplateComponent } from './template/template.component';
 import { CategoryListComponent } from './setups/organization-setup/category/category-list/category-list.component';
 import { OrganizationSetupComponent } from './setups/organization-setup/organization-setup.component';
 import { CategoryComponent } from './setups/organization-setup/category/category.component';
+import { DialogBoxComponent } from './shared/dialog-box/dialog-box.component';
+import { CategoryFormComponent } from './setups/organization-setup/category/category-form/category-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +24,15 @@ import { CategoryComponent } from './setups/organization-setup/category/category
     SetupComponent,
     OrganizationSetupComponent,
     CategoryListComponent,
-    CategoryComponent
+    CategoryComponent,
+    CategoryFormComponent,
+    DialogBoxComponent
   ],
   imports: [
     BrowserModule,
     RouteModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
