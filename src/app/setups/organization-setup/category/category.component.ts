@@ -1,5 +1,5 @@
 import { Component, OnInit, Output } from "@angular/core";
-import { CategoryService } from "./service/category.service";
+import { CategoryService } from "./category-service/category.service";
 
 @Component({
     selector:'app-org-category',
