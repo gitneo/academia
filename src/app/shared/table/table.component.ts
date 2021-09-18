@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { type } from "../../setups/organization-setup/type/interfaces/type.interface";
+import { type } from "../../setups/organization-setup/type/type-interface/type.interface";
 
 @Component({
     selector:'app-table',
