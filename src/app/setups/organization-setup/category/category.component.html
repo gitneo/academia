@@ -1,1 +1,33 @@
-<app-category-list [categoryList] = "categories"></app-category-list>   
+<section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+            <app-modal-buttons></app-modal-buttons>
+              <div class="card-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-default">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <app-table [rows] = "categories" [columns]="categoryDescription"></app-table>
+        </div>
+        <!-- /.card -->
+        </div>
+      </div>
+    <!-- /.row -->
+  </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+
+
+<!-- /.category modal -->
+ <app-category-form></app-category-form>
+<!-- /.category modal -->

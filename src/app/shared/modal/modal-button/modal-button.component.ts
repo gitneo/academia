@@ -5,7 +5,7 @@ import { ModalService } from "../modal-service/modal.service";
     selector:'app-modal-buttons',
     templateUrl:'modal-button.component.html'
 })
-export class ModalButton{
+export class ModalButtonComponent{
     buttonAction :string;
 
     constructor(private modalService :ModalService){}

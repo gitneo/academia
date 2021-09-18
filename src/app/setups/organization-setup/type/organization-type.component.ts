@@ -1,5 +1,5 @@
-import { Component, OnInit, Output } from "@angular/core";
-import { type } from "./interfaces/type.interface";
+import { Component, Input, OnInit, Output } from "@angular/core";
+import { type } from "./type-interface/type.interface";
 import { TypeService } from "./type-service/type.service";
 
 @Component({
@@ -7,15 +7,13 @@ import { TypeService } from "./type-service/type.service";
     templateUrl:'organization-type.component.html'
 })
 export class OrganizationTypeComponent implements OnInit{
+
     @Output() types :type[];
-    @Output() typesDescription :string[] = ['code','title','description']
+    @Output() typeDescription :string[] = ['code','title','description']
 
     constructor(private typeService :TypeService){}
 
     ngOnInit(): void {
-        this.typeService.get().subscribe(types =>{
-            this.types = types;
-        });
-       
+        this.typeService.get().subscribe(types =>this.types = types);
     }
 }

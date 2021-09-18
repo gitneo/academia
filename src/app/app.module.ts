@@ -8,12 +8,15 @@ import { LoginComponent } from './login/login.component';
 import { RouteModule } from './route.module';
 import { SetupComponent } from './setups/setup.component';
 import { TemplateComponent } from './template/template.component';
-import { CategoryListComponent } from './setups/organization-setup/category/category-list/category-list.component';
 import { OrganizationSetupComponent } from './setups/organization-setup/organization-setup.component';
 import { CategoryComponent } from './setups/organization-setup/category/category.component';
-import { DialogBoxComponent } from './shared/dialog-box/dialog-box.component';
 import { CategoryFormComponent } from './setups/organization-setup/category/category-form/category-form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ModalButtonComponent } from './shared/modal/modal-button/modal-button.component';
+import { TableComponent } from './shared/table/table.component';
+import { ModalComponent } from './shared/modal/modal.component';
+import { OrganizationTypeComponent } from './setups/organization-setup/type/organization-type.component';
+import { TypeFormComponent } from './setups/organization-setup/type/type-form/type-form.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +26,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TemplateComponent,
     SetupComponent,
     OrganizationSetupComponent,
-    CategoryListComponent,
     CategoryComponent,
     CategoryFormComponent,
-    DialogBoxComponent
+    ModalButtonComponent,
+    TableComponent,
+    ModalComponent,
+    OrganizationTypeComponent,
+    TypeFormComponent
   ],
   imports: [
     BrowserModule,
