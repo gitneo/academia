@@ -38,4 +38,8 @@ export class CategoryFormComponent implements OnInit{
         if(this.action === submitAction.UPDATE){ this.onUpdate(this.form.value())}
         if(this.action === submitAction.DELETE){ this.onDelete(this.form.value())}
     }
+
+    clearForm(){
+        this.form.reset();
+    }
 }
