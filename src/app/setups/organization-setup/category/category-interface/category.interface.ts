@@ -1,6 +1,6 @@
 
 export interface category{
-    id :number
+    id:   number;
     code :string;
     title :string;
     description :string;

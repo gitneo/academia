@@ -1,46 +1,56 @@
   <!-- form start -->
   <app-modal title = 'Category' modal>
-    <form class="form-horizontal" [formGroup] = "form" (ngSubmit) = onSubmit() create>
-      <div class="card-body">
-        <div class="form-group row">
-          <label for="id" class="col-sm-3 col-form-label">Id</label>
-          <div class="col-sm-4">
-            <input type="text" class="form-control" id="id" placeholder="Category id" formControlName = "id">
-            <small class="form-text text-muted">Please enter a id</small>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="code" class="col-sm-3 col-form-label">Code</label>
-          <div class="col-sm-4">
-            <input type="text" class="form-control" id="code" placeholder="Category code" formControlName = "code">
-            <small class="form-text text-muted">Please enter a code</small>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="category" class="col-sm-3 col-form-label">Category</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="category" placeholder="Enter category name" formControlName = "title">
-            <small class="form-text text-muted">Please enter a category</small>
-          </div>
-        </div>
-        <div class="row">
-          <label for="description" class="col-sm-3 col-form-label">Description</label>
-          <div class="col-sm-9">
-            <!-- textarea -->
-            <div class="form-group">
-              <textarea class="form-control" rows="4" placeholder="Describe the category here..." formControlName = "description"></textarea>
+    <div *ngIf="action === 'create' || action === 'update'">
+        <form class="form-horizontal" [formGroup] = "form" (ngSubmit) = onSubmit() create>
+          <div class="card-body">
+            <div class="form-group row">
+              <label for="code" class="col-sm-3 col-form-label">Code</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="code" placeholder="Category code" formControlName = "code">
+                <small class="form-text text-muted" *ngIf="form.get('code').touched && form.get('code').invalid">Please enter a code</small>
+              </div>
             </div>
+            <div class="form-group row">
+              <label for="category" class="col-sm-3 col-form-label">Category</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="category" placeholder="Enter category name" formControlName = "title">
+                <small class="form-text text-muted" *ngIf="form.get('title').touched && form.get('title').invalid">Please enter a category</small>
+              </div>
+            </div>
+            <div class="row">
+              <label for="description" class="col-sm-3 col-form-label">Description</label>
+              <div class="col-sm-9">
+                <!-- textarea -->
+                <div class="form-group">
+                  <textarea class="form-control" rows="4" placeholder="Describe the category here..." formControlName = "description"></textarea>
+                  <small class="form-text text-muted" *ngIf="form.get('description').touched && !form.get('description').valid">Please enter a description for this category</small>
+
+                </div>
+              </div>
+            </div>
+      
           </div>
-        </div>
-  
-      </div>
-      <div class="modal-footer justify-content-between">
-        <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="clearForm()" #closeButton>Close</button>
-        <button type="submit" class="btn btn-primary">Save</button>
-      </div>
-    </form>
-    <div class="modal-body" delete>
-      <h6>Are you sure you want to delete this category?</h6>
+          <div class="modal-footer justify-content-between">
+            <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="clearForm()" #closeButton>Close</button>
+            <button type="submit" class="btn btn-primary" [disabled] = "!form.valid">Save</button>
+          </div>
+        </form>
     </div>
+
+
+
+    <div *ngIf="action === 'delete'">
+        <div class="modal-body">
+          <form class="form-horizontal" [formGroup] = "form" (ngSubmit) = onSubmit() create>
+          <h6>Are you sure you want to delete this category?</h6>
+          <div class="modal-footer justify-content-between">
+            <button type="submit" class="btn btn-default" data-dismiss="modal"  #closeButton>Close</button>
+            <button type="submit" class="btn btn-primary">Delete</button>
+          </div>
+          </form>
+        </div>
+    </div>
+
+
   </app-modal>
 

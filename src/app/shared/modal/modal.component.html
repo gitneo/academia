@@ -8,16 +8,16 @@
           </button>
         </div>
         <div class="modal-body">
+          <ng-content></ng-content>
 
            <!-- form start -->
-           <div *ngIf="buttonAction ==='create' || buttonAction ==='update' ">
+           <!-- <div *ngIf="buttonAction ==='create' || buttonAction ==='update' ">
                <ng-content select = '[create]'></ng-content>
            </div>
 
            <div *ngIf="buttonAction ==='delete' ">
                <ng-content select = '[delete]'></ng-content>
-           </div>
-
+           </div> -->
         </div>
       </div>
       <!-- /.modal-content -->

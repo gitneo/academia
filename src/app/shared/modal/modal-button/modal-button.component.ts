@@ -11,6 +11,6 @@ export class ModalButtonComponent{
     constructor(private modalService :ModalService){}
 
     setAction(action :string){
-        this.modalService.buttonEventEmitter.emit(action);
+        this.modalService.buttonEventEmitter.next(action);
     }
 }

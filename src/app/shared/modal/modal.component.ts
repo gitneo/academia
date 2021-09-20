@@ -7,12 +7,12 @@ import { ModalService } from "./modal-service/modal.service";
 })
 export class ModalComponent implements OnInit{
     title :string;
-    buttonAction :string
+    @Output() buttonAction :string
 
     constructor(private modalService: ModalService){}
 
     ngOnInit(): void {
-       this.modalService.buttonEventEmitter.subscribe(action=>{this.buttonAction = action; console.log(action)})
+       this.modalService.buttonEventEmitter.subscribe(action=>{this.buttonAction = action})
     }
 
 }

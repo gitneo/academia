@@ -1,51 +1,65 @@
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { FormControl, FormControlName, FormGroup } from "@angular/forms";
+import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
+import { FormControl, FormControlName, FormGroup, Validators } from "@angular/forms";
 import { submitAction } from "src/app/shared/enum/operation.enum";
 import { ModalService } from "src/app/shared/modal/modal-service/modal.service";
+import { TableService } from "src/app/shared/table/table.service";
 import Swal from "sweetalert2";
 import { category } from "../category-interface/category.interface";
 import { CategoryService } from "../category-service/category.service";
 
 @Component({
     selector:'app-category-form',
-    templateUrl:'category-form.component.html'
+    templateUrl:'category-form.component.html',
+    styleUrls:['category-form.component.css']
 })
 export class CategoryFormComponent implements OnInit{
     
-    action :string;
     form :FormGroup;
+    action :string;
     @ViewChild("closeButton") closeButton: ElementRef
 
-    constructor(private categoryService :CategoryService, private modalService :ModalService){}
+    constructor(private categoryService :CategoryService, private modalService :ModalService, private tableService : TableService){}
     
     ngOnInit(): void {
+        this.modalService.buttonEventEmitter.subscribe(data => this.action = data);
         this.form = new FormGroup({
             id:   new FormControl(),
-            code : new FormControl(),
-            title: new FormControl(),
-            description: new FormControl()
-        })
-        this.modalService.buttonEventEmitter.subscribe(action=> this.action = action)
-    }
+            code : new FormControl('',Validators.required),
+            title: new FormControl('',Validators.required),
+            description: new FormControl('',Validators.required),
+            createdAt : new FormControl(),
+            updatedAt : new FormControl()
+        });
+
+
+        if(this.action !== submitAction.CREATE){
+            this.tableService.tableEventEmitter.subscribe(data=>{
+                data ? this.form.setValue(data) : this.form.reset()
+            });
+        }
+
+     }
+
 
     onSave(category :category){
         this.categoryService.post(category).subscribe(data => {
-            if(data){
-                this.successfully('saved')
-            }else{
-                this.failed('save')
-            }
+            data ? this.successfully('saved') : this.failed('save')
         })
     }
 
-   getAll(){this.categoryService.get().subscribe(data =>this.form.setValue(data))}
 
-    onUpdate(category :category){console.log('update action')}
+    onUpdate(category :category){this.categoryService.update(category).subscribe(data=>{
+        data ? this.successfully('saved') : this.failed('save')
 
-    onDelete(category :category){console.log('delete action')}
+    })}
+
+
+    onDelete(category :category){this.categoryService.delete(category).subscribe(data=>{
+        data ? this.successfully('saved') : this.failed('save')
+    })}
+
 
     onSubmit(){
-        console.log('this.action: ' + this.action + ' ' + submitAction.CREATE);
         if(this.action === submitAction.CREATE){ this.onSave(this.form.value)}
         if(this.action === submitAction.UPDATE){ this.onUpdate(this.form.value)}
         if(this.action === submitAction.DELETE){ this.onDelete(this.form.value)}
@@ -56,11 +70,11 @@ export class CategoryFormComponent implements OnInit{
     }
 
     successfully(operation_type :string){
-        this.getAll();
+        this.categoryService.getAll()
         this.form.reset();
         Swal.fire({  
             icon: 'success',
-            title: 'Category successfully '+ operation_type,
+            title: `Category ${this.action}d successfully`,
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
@@ -72,7 +86,7 @@ export class CategoryFormComponent implements OnInit{
     failed(operation_type :string){
         Swal.fire({  
             icon: 'error',
-            title: 'Category failed to '+ operation_type,
+            title: `Category failed to ${this.action} `,
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
