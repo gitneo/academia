@@ -22,6 +22,10 @@ export class CategoryService{
         return this.categories;
     }
 
+    getAllCategories(){
+        return this.http.get<category[]>('http://localhost:3000/category/all');
+    }
+
     update(category :category){
         return this.http.put('http://localhost:3000/category/update', category);
     }

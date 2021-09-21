@@ -14,7 +14,7 @@ export class TableComponent{
     constructor(private tableService : TableService){}
 
     get(category: category){
-        console.log(`selected category is ${category.id}`)
+        console.log(`selected category is ${category}`)
         this.tableService.tableEventEmitter.next(category);
     }
 }

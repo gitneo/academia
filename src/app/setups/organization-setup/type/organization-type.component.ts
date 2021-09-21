@@ -9,11 +9,13 @@ import { TypeService } from "./type-service/type.service";
 export class OrganizationTypeComponent implements OnInit{
 
     @Output() types :type[];
-    @Output() typeDescription :string[] = ['code','title','description']
+    @Output() typeDescription :string[] = ['code','title','categoryId','description']
 
     constructor(private typeService :TypeService){}
 
     ngOnInit(): void {
-        this.typeService.get().subscribe(types =>this.types = types);
+        this.types = this.typeService.getAll();
+        this.typeService.typeEventEmitter.subscribe(data => this.types = data)
+
     }
 }
