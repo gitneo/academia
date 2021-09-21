@@ -17,6 +17,8 @@ import { TableComponent } from './shared/table/table.component';
 import { ModalComponent } from './shared/modal/modal.component';
 import { OrganizationTypeComponent } from './setups/organization-setup/type/organization-type.component';
 import { TypeFormComponent } from './setups/organization-setup/type/type-form/type-form.component';
+import { OrganizationComponent } from './setups/organization-setup/organization/organization.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { TypeFormComponent } from './setups/organization-setup/type/type-form/ty
     TableComponent,
     ModalComponent,
     OrganizationTypeComponent,
-    TypeFormComponent
+    TypeFormComponent,
+    OrganizationComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
