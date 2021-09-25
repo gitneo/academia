@@ -19,6 +19,7 @@ import { OrganizationTypeComponent } from './setups/organization-setup/type/orga
 import { TypeFormComponent } from './setups/organization-setup/type/type-form/type-form.component';
 import { OrganizationComponent } from './setups/organization-setup/organization/organization.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { GroupButtonsComponent } from './shared/button/group-buttons.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     OrganizationTypeComponent,
     TypeFormComponent,
     OrganizationComponent,
-    AboutusComponent
+    AboutusComponent,
+    GroupButtonsComponent
   ],
   imports: [
     BrowserModule,

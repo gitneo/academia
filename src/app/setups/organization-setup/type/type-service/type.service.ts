@@ -24,6 +24,10 @@ export class TypeService{
         return this.types;
     }
 
+    getAllTypes(){
+        return this.http.get<type[]>('http://localhost:3000/type/all')
+    }
+
 
 
     update(type :type){

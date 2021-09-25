@@ -1,6 +1,6 @@
 
 export interface type{
-    id :number
+    id :number;
     code :string;
     title :string;
     categoryId: number;

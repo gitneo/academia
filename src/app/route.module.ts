@@ -15,10 +15,10 @@ const routes :Routes =[
         {path:'dashboard',component:DashboardComponent},
         {path:'setups',component:SetupComponent},
         {path:'AboutUs',component:AboutusComponent},
-
         {path:'organization-setup',component:OrganizationSetupComponent,children:[
             {path:'categories', component:CategoryComponent},
             {path:'types', component:OrganizationTypeComponent},
+            {path:'organization', component:OrganizationComponent},
         ]}
     ]},
     {path:'login',component:LoginComponent},
