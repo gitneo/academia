@@ -1,0 +1,88 @@
+<div class="card card-info">
+    <div class="card-header">
+      <h3 class="card-title">
+          <strong>Organization</strong>
+      </h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form class="form-horizontal" [formGroup] = "form" (ngSubmit) = onSubmit()>
+      <div class="card-body">
+          
+        <div class="form-group row">
+           <label for="orgTypeId" class="col-sm-2 col-form-label">Organization Type</label>
+            <div class="col-sm-3">
+                <select class="custom-select" formControlName="orgTypeId">
+                    <option value="{{type.id}}" *ngFor = "let type of orgTypes">{{type.title}}</option>
+                </select>          
+            </div>
+
+            <label for="exampleInputFile" class="col-sm-1 col-form-label">Logo</label>
+            <div class="input-group col-sm-6">
+                <div class="custom-file">
+                <input type="file" class="custom-file-input" id="exampleInputFile" formControlName="logoPath">
+                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                </div>
+                <div class="input-group-append">
+                <span class="input-group-text">Upload</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="org-name" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="org-name" placeholder="name of organization" formControlName="orgName">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="moto" class="col-sm-2 col-form-label">Moto</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="moto" placeholder="Our moto" formControlName="moto">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="mission" class="col-sm-2 col-form-label">Mission</label>
+          <div class="col-sm-8">
+            <textarea id="mission" class="form-control" rows="3" placeholder="Enter ..." formControlName="mission"></textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+            <label for="location" class="col-sm-2 col-form-label">Location</label>
+            <div class="col-sm-5">
+              <textarea id="location" class="form-control" rows="3" placeholder="Enter ..." formControlName="address"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="afilitiation" class="col-sm-2 col-form-label">Afiliation</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" id="afilitiation" placeholder="Afilitiation to" formControlName="affiliation">
+            </div>
+            <label for="org-name" class="col-sm-2 col-form-label">Funded by</label>
+            <div class="col-sm-3">
+                <select class="custom-select" formControlName="fundedBy">
+                    <option>option 1</option>
+                    <option>option 2</option>
+                    <option>option 3</option>
+                    <option>option 4</option>
+                    <option>option 5</option>
+                </select>          
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="rc-no" class="col-sm-2 col-form-label">RC No.</label>
+            <div class="col-sm-5">
+              <input type="number" class="form-control" id="rc-no" placeholder="Our RC NUMBER" formControlName="rcNumber">
+            </div>
+        </div>
+
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer">
+        <app-group-buttons></app-group-buttons>
+        <button type="button" class="btn btn-info float-right" #closeButton>Cancel</button>
+      </div>
+      <!-- /.card-footer -->
+    </form>
+  </div>
