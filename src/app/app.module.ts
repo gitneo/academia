@@ -20,6 +20,12 @@ import { TypeFormComponent } from './setups/organization-setup/type/type-form/ty
 import { OrganizationComponent } from './setups/organization-setup/organization/organization.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { GroupButtonsComponent } from './shared/button/group-buttons.component';
+import { ProgramSetupComponent } from './setups/program-setup/program-setup.component';
+import { ProgramAwardComponent } from './setups/program-setup/program-award/program-award.component';
+import { ProgramTypeComponent } from './setups/program-setup/program-type/program-type.component';
+import { ProgramComponent } from './setups/program-setup/program/program.component';
+ import { SidebarLayoutComponent } from './shared/layouts/sidebar-layout/sidebar-layout.component';
+ import { VerticalNavigationComponent } from './shared/navigation/vertical-navigation.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +44,13 @@ import { GroupButtonsComponent } from './shared/button/group-buttons.component';
     TypeFormComponent,
     OrganizationComponent,
     AboutusComponent,
-    GroupButtonsComponent
+    GroupButtonsComponent,
+    ProgramSetupComponent,
+    ProgramAwardComponent,
+    ProgramTypeComponent,
+    ProgramComponent,
+     SidebarLayoutComponent,
+    VerticalNavigationComponent
   ],
   imports: [
     BrowserModule,
