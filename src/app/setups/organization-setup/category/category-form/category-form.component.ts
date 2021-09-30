@@ -2,7 +2,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
 import { FormControl, FormControlName, FormGroup, Validators } from "@angular/forms";
 import { submitAction } from "src/app/shared/enum/operation.enum";
 import { ModalService } from "src/app/shared/modal/modal-service/modal.service";
-import { TableService } from "src/app/shared/table/table.service";
+import { TableService } from "src/app/shared/table/simple-table/table.service";
 import Swal from "sweetalert2";
 import { category } from "../category-interface/category.interface";
 import { CategoryService } from "../category-service/category.service";

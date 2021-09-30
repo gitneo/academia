@@ -7,10 +7,6 @@ import { CategoryComponent } from "./setups/organization-setup/category/category
 import { OrganizationSetupComponent } from "./setups/organization-setup/organization-setup.component";
 import { OrganizationComponent } from "./setups/organization-setup/organization/organization.component";
 import { OrganizationTypeComponent } from "./setups/organization-setup/type/organization-type.component";
-import { ProgramAwardComponent } from "./setups/program-setup/program-award/program-award.component";
-import { ProgramSetupComponent } from "./setups/program-setup/program-setup.component";
-import { ProgramTypeComponent } from "./setups/program-setup/program-type/program-type.component";
-import { ProgramComponent } from "./setups/program-setup/program/program.component";
 import { SetupComponent } from "./setups/setup.component";
 import { TemplateComponent } from "./template/template.component";
 
@@ -24,11 +20,6 @@ const routes :Routes =[
             {path:'types',      component:OrganizationTypeComponent},
             {path:'organization', component:OrganizationComponent},
         ]},
-        {path:'program-setup',component:ProgramSetupComponent, children:[
-            {path:'types',    component:ProgramTypeComponent},
-            {path:'awards',   component:ProgramAwardComponent},
-            {path:'programs', component:ProgramComponent},
-        ]}
     ]},
     {path:'login',component:LoginComponent},
 
