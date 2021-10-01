@@ -1,0 +1,26 @@
+ <!-- Content Wrapper. Contains page content -->
+
+    <section class="content">
+      <div class="container-fluid">
+        <div class="card card-primary card-outline">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-5 col-sm-2">
+                <div class="nav flex-column nav-tabs h-100" id="vert-tabs-tab" role="tablist" aria-orientation="vertical">
+                  <a class="nav-link" *ngFor="let link of links" id="vert-tabs-home-tab"    data-toggle="pill"  routerLink = {{link.route}} role="tab" aria-controls="vert-tabs-home" aria-selected="true">{{link.desc}}</a>
+                </div>
+              </div>
+              <div class="col-7 col-sm-10">
+                <div class="tab-content" id="vert-tabs-tabContent">
+                   <router-outlet></router-outlet>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->

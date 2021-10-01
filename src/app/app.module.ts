@@ -23,6 +23,11 @@ import { GroupButtonsComponent } from './shared/button/group-buttons.component';
  import { VerticalNavigationComponent } from './shared/navigation/vertical-navigation.component';
 
 import { TableComponent } from './shared/table/simple-table/table.component';
+import { PageHeaderComponent } from './shared/header/page-header/page-header.component';
+import { ProgramSetupContainerComponent } from './setups/program/program-setup-container/program-setup-container.component';
+import { sidebarLayoutComponent } from './shared/layout/siderbar-layout/sidebar-layout.component';
+import { ModalTableComponent } from './shared/table/modal-table/modal-table.component';
+import { ProgramTypeModalTableContainerComponent } from './setups/program/types/program-type-modal-table-container/program-type-modal-table-container.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +49,11 @@ import { TableComponent } from './shared/table/simple-table/table.component';
     VerticalNavigationComponent,
     TableComponent,
     ModalButtonComponent,
+    PageHeaderComponent,
+    ProgramSetupContainerComponent,
+    sidebarLayoutComponent,
+    ModalTableComponent,
+    ProgramTypeModalTableContainerComponent
   ],
   imports: [
     BrowserModule,

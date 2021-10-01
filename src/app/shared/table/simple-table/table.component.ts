@@ -12,7 +12,7 @@ export class TableComponent{
 
     constructor(private tableService : TableService){}
 
-    get(category: any){
-        this.tableService.tableEventEmitter.next(category);
+    get(row: any){
+        this.tableService.tableEventEmitter.next(row);
     }
 }

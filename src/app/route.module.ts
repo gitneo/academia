@@ -7,6 +7,8 @@ import { CategoryComponent } from "./setups/organization-setup/category/category
 import { OrganizationSetupComponent } from "./setups/organization-setup/organization-setup.component";
 import { OrganizationComponent } from "./setups/organization-setup/organization/organization.component";
 import { OrganizationTypeComponent } from "./setups/organization-setup/type/organization-type.component";
+import { ProgramSetupContainerComponent } from "./setups/program/program-setup-container/program-setup-container.component";
+import { ProgramTypeModalTableContainerComponent } from "./setups/program/types/program-type-modal-table-container/program-type-modal-table-container.component";
 import { SetupComponent } from "./setups/setup.component";
 import { TemplateComponent } from "./template/template.component";
 
@@ -20,6 +22,9 @@ const routes :Routes =[
             {path:'types',      component:OrganizationTypeComponent},
             {path:'organization', component:OrganizationComponent},
         ]},
+        {path:'program-setup', component:ProgramSetupContainerComponent,children:[
+            {path:'types',   component:ProgramTypeModalTableContainerComponent}
+        ]}
     ]},
     {path:'login',component:LoginComponent},
 
