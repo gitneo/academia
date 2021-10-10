@@ -14,7 +14,8 @@ export class ProgramTypeModalTableContainerComponent implements OnInit{
     constructor(private programTypeService : ProgramTypeService){}
 
     ngOnInit(): void {
-        this.programTypeService.getAll().subscribe(data => this.rows = data);
+        this.rows = this.programTypeService.getAllTypes();
+        this.programTypeService.programTypeSubject.subscribe(data => this.rows = data)
     }
 
      

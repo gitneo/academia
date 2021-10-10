@@ -16,6 +16,5 @@ export class OrganizationTypeComponent implements OnInit{
     ngOnInit(): void {
         this.types = this.typeService.getAll();
         this.typeService.typeEventEmitter.subscribe(data => this.types = data)
-
     }
 }

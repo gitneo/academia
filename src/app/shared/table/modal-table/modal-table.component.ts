@@ -1,10 +1,10 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
     selector:'app-modal-table',
     templateUrl:'modal-table.component.html'
 })
-export class ModalTableComponent{
+export class ModalTableComponent {
     @Input() rows :any[];
     @Input() columns :string[];
 }

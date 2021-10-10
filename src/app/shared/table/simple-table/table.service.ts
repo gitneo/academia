@@ -4,5 +4,5 @@ import { category } from "src/app/setups/organization-setup/category/category-in
 
 @Injectable({providedIn:'root'})
 export class TableService{
-    tableEventEmitter = new Subject<category>();
+    tableEventEmitter = new Subject<any>();
 }
