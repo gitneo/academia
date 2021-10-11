@@ -21,7 +21,7 @@ export class ProgramService{
     }
 
 
-    put(program :Program){
+    update(program :Program){
         return this.http.put('http://localhost:3000/program', program);
     }
 

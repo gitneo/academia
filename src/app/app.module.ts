@@ -31,6 +31,7 @@ import { ProgramTypeModalTableContainerComponent } from './setups/program/types/
 import { ProgramTypeFormComponent } from './setups/program/types/form/program-type-form.component';
 import { ProgramAwardModalTableContainerComponent } from './setups/program/awards/container/program-award-modal-table-container.component';
 import { AwardFormComponent } from './setups/program/awards/form/award-form.component';
+import { ProgramContainerComponent } from './setups/program/programs/container/program-container.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { AwardFormComponent } from './setups/program/awards/form/award-form.comp
     ProgramTypeModalTableContainerComponent,
     ProgramTypeFormComponent,
     ProgramAwardModalTableContainerComponent,
-    AwardFormComponent
+    AwardFormComponent,
+    ProgramContainerComponent
   ],
   imports: [
     BrowserModule,

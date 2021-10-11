@@ -17,7 +17,7 @@ export class ProgramTypeService{
     }
 
     getAll(){ 
-       this.http.get<ProgramType[]>('http://localhost:3000/programType/all');
+       return this.http.get<ProgramType[]>('http://localhost:3000/programType/all');
     }
 
 

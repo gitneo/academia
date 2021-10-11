@@ -1,0 +1,77 @@
+<div class="card card-info">
+    <div class="card-header">
+      <h3 class="card-title">
+          <strong>Programs</strong>
+      </h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form class="form-horizontal" [formGroup] = "form" (ngSubmit) = onSubmit()>
+      <div class="card-body">
+          
+        <div class="form-group row">
+           <label for="code" class="col-sm-1 col-form-label">Code</label>
+           <div class="col-sm-2">
+            <input type="text" class="form-control" id="org-name" placeholder="program code" formControlName="code">
+           </div>
+
+           <label for="title" class="col-sm-1 col-form-label">Title</label>
+           <div class="col-sm-8">
+            <input type="text" class="form-control" id="title" placeholder="program title" formControlName="title">
+           </div>
+            <!-- <div class="col-sm-3">
+                <select class="custom-select" formControlName="title">
+                    <option value="{{type.id}}" *ngFor = "let type of orgTypes">{{type.title}}</option>
+                </select>          
+            </div> -->
+        </div>
+
+
+
+
+        <div class="form-group row">
+          <label for="type" class="col-sm-1 col-form-label">Type</label>
+          <div class="col-sm-2">
+            <!-- <input type="text" class="form-control" id="type" placeholder="type of program" formControlName="type"> -->
+            <select class="custom-select" formControlName="type">
+              <option value="{{type.id}}" *ngFor = "let type of programTypes">{{type.title}}</option>
+            </select> 
+          </div>
+          <label for="duration" class="col-sm-1 col-form-label">Duration</label>
+          <div class="col-sm-2">
+            <input type="number" class="form-control" id="duration" placeholder="duration" formControlName="duration">
+          </div>
+          <div class="col-sm-2">
+            <!-- <input type="text" class="form-control" id="durationType" placeholder="duration type" formControlName="durationType"> -->
+            <select class="custom-select" formControlName="durationType">
+              <option value="Y">YEARS</option>
+              <option value="M">MONTHS</option>
+              <option value="D">DAYS</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+          <label for="award" class="col-sm-1 col-form-label">Degree</label>
+          <div class="col-sm-5">
+            <!-- <input type="text" class="form-control" id="award" placeholder="award" formControlName="award"> -->
+            <select class="custom-select" formControlName="award">
+              <option value="{{award.id}}" *ngFor = "let award of awards">{{award.description}}</option>
+            </select>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- /.card-body -->
+
+
+
+      <div class="card-footer">
+        <app-group-buttons></app-group-buttons>
+        <button type="button" class="btn btn-info float-right" #closeButton>Cancel</button>
+      </div>
+      <!-- /.card-footer -->
+    </form>
+  </div>
