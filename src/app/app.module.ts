@@ -29,6 +29,8 @@ import { sidebarLayoutComponent } from './shared/layout/siderbar-layout/sidebar-
 import { ModalTableComponent } from './shared/table/modal-table/modal-table.component';
 import { ProgramTypeModalTableContainerComponent } from './setups/program/types/program-type-modal-table-container/program-type-modal-table-container.component';
 import { ProgramTypeFormComponent } from './setups/program/types/form/program-type-form.component';
+import { ProgramAwardModalTableContainerComponent } from './setups/program/awards/container/program-award-modal-table-container.component';
+import { AwardFormComponent } from './setups/program/awards/form/award-form.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { ProgramTypeFormComponent } from './setups/program/types/form/program-ty
     sidebarLayoutComponent,
     ModalTableComponent,
     ProgramTypeModalTableContainerComponent,
-    ProgramTypeFormComponent
+    ProgramTypeFormComponent,
+    ProgramAwardModalTableContainerComponent,
+    AwardFormComponent
   ],
   imports: [
     BrowserModule,

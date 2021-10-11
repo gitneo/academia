@@ -7,6 +7,7 @@ import { CategoryComponent } from "./setups/organization-setup/category/category
 import { OrganizationSetupComponent } from "./setups/organization-setup/organization-setup.component";
 import { OrganizationComponent } from "./setups/organization-setup/organization/organization.component";
 import { OrganizationTypeComponent } from "./setups/organization-setup/type/organization-type.component";
+import { ProgramAwardModalTableContainerComponent } from "./setups/program/awards/container/program-award-modal-table-container.component";
 import { ProgramSetupContainerComponent } from "./setups/program/program-setup-container/program-setup-container.component";
 import { ProgramTypeModalTableContainerComponent } from "./setups/program/types/program-type-modal-table-container/program-type-modal-table-container.component";
 import { SetupComponent } from "./setups/setup.component";
@@ -23,7 +24,8 @@ const routes :Routes =[
             {path:'organization', component:OrganizationComponent},
         ]},
         {path:'program-setup', component:ProgramSetupContainerComponent,children:[
-            {path:'types',   component:ProgramTypeModalTableContainerComponent}
+            {path:'types',   component:ProgramTypeModalTableContainerComponent},
+            {path:'awards',   component:ProgramAwardModalTableContainerComponent}
         ]}
     ]},
     {path:'login',component:LoginComponent},
