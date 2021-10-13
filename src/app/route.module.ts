@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { AboutusComponent } from "./aboutus/aboutus.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { LoginComponent } from "./login/login.component";
+import { CalendarComponent } from "./setups/calendar/calendar.component";
 import { CategoryComponent } from "./setups/organization-setup/category/category.component";
 import { OrganizationSetupComponent } from "./setups/organization-setup/organization-setup.component";
 import { OrganizationComponent } from "./setups/organization-setup/organization/organization.component";
@@ -28,7 +29,8 @@ const routes :Routes =[
             {path:'types',   component:ProgramTypeModalTableContainerComponent},
             {path:'awards',   component:ProgramAwardModalTableContainerComponent},
             {path:'programs', component:ProgramContainerComponent}
-        ]}
+        ]},
+        {path:'calendar',component:CalendarComponent, children:[]}
     ]},
     {path:'login',component:LoginComponent},
 
